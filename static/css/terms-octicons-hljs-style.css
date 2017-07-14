@@ -1,0 +1,22 @@
+/* For Highlight.js */
+.pre {
+  background: #f8f8f8;
+}
+/* For displaying categories and tags in every post */
+
+.terms { font-size: .9em; }
+
+/* Styling for Octicons */
+.mega64-octicon {
+  font: normal normal normal 16px/1 octicons;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.mega64-octicon { font-size: 64px; }

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Hugo XMin | A minimal Hugo website</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/terms-octicons-hljs-style.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min-4.7.0.css">
+
+<link rel="stylesheet" href="/css/octicons-3.0.1.css">
+<link rel="stylesheet" href="/css/octicons-2.4.1.css"> 
+<link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"> 
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">About Hugo XMin</span></h1>
+<h2 class="author">Yihui Xie</h2>
+
+
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+
+
+</div>
+
+<main>
+
+
+<p>My Customization (hbxminwww):</p>
+
+<ul>
+<li><strong>Until July 13, 2016</strong></li>
+<li>Added &lsquo;Posts&rsquo; to menu through <code>config.toml</code></li>
+<li>Removed &lsquo;Notes&rsquo; . Delete <code>content/notes</code> directory. [done]</li>
+<li>Removed &lsquo;Posts&rsquo; from appearing in the Home Page. In <code>layouts/_default/list.html</code> Add if condition. [done]</li>
+<li><a href="https://github.com/yihui/hugo-xmin/pull/5">Enable highlight.js for syntax highlighting of code blocks</a>  <code>layouts/partials/foot_custom.html</code> and <code>layouts/partials/head_custom.html</code> and <code>static/css/terms-octicons-hljs-style.css</code> add <code>.pre</code> style</li>
+<li>Added <a href="https://github.com/yihui/hugo-xmin/commit/f1e3a90489ec61d903429a582a058b8a1b4d7093">Categories &amp; Tags</a> to every post page. In <code>layouts/_default/single.html</code> and <code>static/css/terms-octicons-hljs-style.css</code> add <code>.terms</code> style</li>
+<li>Changed posts layout in <code>config.toml</code> to <code>post = &quot;/post/:slug/&quot;</code> [done]</li>
+<li>Changed Date Format in <code>layouts/_defaults/list.html</code> to <code>2006, Jan 2</code> and in  <code>layouts/_defaults/single.html</code> to <code>Jan 2, 2006</code> [done]</li>
+<li>Added Octicons &amp; FontAwesome CSS to <code>layouts/partials/head_custom.html</code> for specific icons e.g. telescope <i class="octicon octicon-telescope"></i> , microscope <i class="octicon octicon-microscope"></i> etc&hellip; [done]</li>
+<li>Added CSS code <code>.mega64-octicon</code> for 64px icons in <code>/static/css/terms-octicons-hljs-style.css</code> add <code>.megaocticon</code> and <code>.mega64octicon</code> style [done]</li>
+<li>Copied FontAwesome and Octicon fonts and CSS to local directory <code>static/css</code> and <code>static/fonts</code> instead of CDN. [done]</li>
+<li>Added <code>favicon.ico</code> to <code>static/images/</code> and link to file <code>layouts/partial/head_custom.html</code> [done]</li>
+</ul>
+
+<h3 id="config-toml"><code>config.toml</code></h3>
+
+<p>Original:</p>
+
+<pre><code class="language-toml">[permalinks]
+    post = &quot;/post/:year/:month/:day/:slug/&quot;
+    note = &quot;/note/:year/:month/:day/:slug/&quot;
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-toml">[permalinks]
+    post = &quot;/post/:slug/&quot;
+</code></pre>
+
+<h3 id="layouts-partials-foot-custom-html"><code>layouts/partials/foot_custom.html</code></h3>
+
+<p>Original:</p>
+
+<pre><code>No support for syntax highlighting
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-html">&lt;!-- Highlight Code--&gt;
+&lt;script src=&quot;//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+hljs.configure({languages: ['r','bash','css','html','json','tex','latex','sql','toml','yaml']});
+hljs.initHighlightingOnLoad();
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="layouts-partials-head-custom-html"><code>layouts/partials/head_custom.html</code></h3>
+
+<p>Original:</p>
+
+<pre><code>File did not exist.
+</code></pre>
+
+<p>Modified:</p>
+
+<ul>
+<li>favicon local</li>
+<li>octicons-catandpoststerms-hljs css local</li>
+<li>fontawesome local</li>
+<li>octicon local</li>
+<li>highlight.js remote</li>
+<li>github style in highlight.js remote</li>
+<li>typekit for cn character spacing.</li>
+</ul>
+
+<pre><code class="language-html">&lt;link rel=&quot;shortcut icon&quot; href=&quot;/images/favicon.ico&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/terms-octicons-hljs-style.css&quot;&gt;
+&lt;!-- &lt;script async src=&quot;https://use.fontawesome.com/32c3d13def.js&quot;&gt;&lt;/script&gt; --&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/font-awesome.min-4.7.0.css&quot;&gt;&lt;!-- beaker --&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/octicons-3.0.1.css&quot;&gt;&lt;!-- beaker --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/octicons-2.4.1.css&quot;&gt; &lt;!-- microscope --&gt;
+&lt;link href=&quot;//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css&quot; rel=&quot;stylesheet&quot;&gt; &lt;!-- for highlight.js --&gt;
+&lt;!-- &lt;link href=&quot;/css/github.min-9.12.0.css&quot; rel=&quot;stylesheet&quot;&gt; local for highlight.js --&gt;
+{{ if or .IsHome (len (findRE &quot;^/cn/&quot; .URL)) }}
+&lt;script async src=&quot;/js/load-typekit.js&quot;&gt;&lt;/script&gt;
+{{ if lt (.Date.Year) 2017 }}
+&lt;script&gt;
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function (e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+&lt;/script&gt;
+{{ end }}
+{{ end }}
+</code></pre>
+
+<h3 id="static-css-folder"><code>static/css</code> folder</h3>
+
+<p>Original:</p>
+
+<pre><code>folder does not exist
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-bash">font-awesome-4.7.0.css
+font-awesome.min-4.7.0.css
+github.min-9.12.0.css  not used, using bootcss remote
+octicons-2.4.1.css
+octicons-3.0.1.css
+</code></pre>
+
+<h3 id="static-fonts-folder"><code>static/fonts</code> folder</h3>
+
+<p>Original:</p>
+
+<pre><code>does not exist
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-bash">static/fonts:
+fontawesome-4.7.0  octicons-2.4.1  octicons-3.0.1
+
+static/fonts/fontawesome-4.7.0:
+FontAwesome.otf          fontawesome-webfont.svg  fontawesome-webfont.woff
+fontawesome-webfont.eot  fontawesome-webfont.ttf  fontawesome-webfont.woff2
+
+static/fonts/octicons-2.4.1:
+octicons.eot  octicons_files  octicons.svg  octicons.ttf  octicons.woff
+
+static/fonts/octicons-2.4.1/octicons_files:
+viewsource.css
+
+static/fonts/octicons-3.0.1:
+octicons.eot  octicons_files  octicons.svg  octicons.ttf  octicons.woff
+
+static/fonts/octicons-3.0.1/octicons_files:
+viewsource.css
+</code></pre>
+
+<h3 id="static-images-folder-for-favicon"><code>static/images</code> folder for favicon</h3>
+
+<p>Original:</p>
+
+<pre><code>does not exist
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-bash">static/images:
+favicon.ico
+</code></pre>
+
+<h3 id="layouts-default-list-html-to-remove-posts-listing-on-any-page"><code>layouts/_default/list.html</code> to remove posts listing on any page.</h3>
+
+<p>Original:</p>
+
+<pre><code>does not exist
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-yaml">{{ partial &quot;header.html&quot; . }}
+
+{{if not .IsHome }}
+&lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+{{ end }}
+
+{{ .Content }}
+
+{{if not .IsHome }} // Extra Line of Code
+&lt;ul&gt;
+  {{ range (where .Data.Pages &quot;Section&quot; &quot;!=&quot; &quot;&quot;) }}
+  &lt;li&gt;
+    &lt;span class=&quot;date&quot;&gt;{{ .Date.Format &quot;2006, Jan 2&quot; }}&lt;/span&gt;
+    &lt;a href=&quot;{{ .URL }}&quot;&gt;{{ .Title }}&lt;/a&gt;
+  &lt;/li&gt;
+  {{ end }}
+&lt;/ul&gt;
+{{ end }}  // Extra Line of Code
+
+{{ partial &quot;footer.html&quot; . }}
+
+</code></pre>
+
+<h3 id="layouts-default-single-html-to-add-categories-and-tags-to-posts"><code>layouts/_default/single.html</code> to add categories and tags to posts.</h3>
+
+<p>Original:</p>
+
+<pre><code>does not exist
+</code></pre>
+
+<p>Modified:</p>
+
+<pre><code class="language-yaml">{{ partial &quot;header.html&quot; . }}
+&lt;div class=&quot;article-meta&quot;&gt;
+&lt;h1&gt;&lt;span class=&quot;title&quot;&gt;{{ .Title }}&lt;/span&gt;&lt;/h1&gt;
+{{ with .Params.author }}&lt;h2 class=&quot;author&quot;&gt;{{ . }}&lt;/h2&gt;{{ end }}
+{{ if .Params.date }}&lt;h2 class=&quot;date&quot;&gt;{{ .Date.Format &quot;Jan 2, 2006&quot; }}&lt;/h2&gt;{{ end }}
+&lt;!-- Start: Adding categories and tags to articles --&gt;
+&lt;p class=&quot;terms&quot;&gt;
+  {{ range $i := (slice &quot;categories&quot; &quot;tags&quot;) }}
+  {{ with ($.Param $i) }}
+  {{ $i | title }}: {{ range $k := . }}&lt;a href=&quot;{{ relURL (print &quot;/&quot; $i &quot;/&quot; $k | urlize) }}&quot;&gt;{{$k}}&lt;/a&gt; {{ end }}
+  {{ end }}
+  {{ end }}
+&lt;/p&gt;
+&lt;!-- End: Adding categories and tags to articles --&gt;
+
+&lt;/div&gt;
+
+&lt;main&gt;
+{{ .Content }}
+&lt;/main&gt;
+
+{{ partial &quot;footer.html&quot; . }}
+</code></pre>
+
+<h1 id="about-hugo-xmin">About Hugo XMin</h1>
+
+<p><strong>XMin</strong> is the first Hugo theme I have designed. The original reason that I wrote it was I needed a minimal example of Hugo themes when I was writing the  <a href="https://github.com/rstudio/blogdown"><strong>blogdown</strong></a> book. Basically I wanted a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, categories, tags, and RSS. That is all. Nothing fancy. In terms of CSS and JavaScript, I really want to keep them minimal. In fact, this theme does not contain any JavaScript code at all, although on this example website I did introduce some JavaScript code (still relatively simple anyway). The theme does not contain any images, either, and is pretty much a plain-text theme.</p>
+
+<p>The theme name &ldquo;XMin&rdquo; can be interpreted as &ldquo;<strong>X</strong>ie&rsquo;s <strong>Min</strong>imal theme&rdquo; (Xie is my last name) or &ldquo;e<strong>X</strong>tremely <strong>Min</strong>imal theme&rdquo;.</p>
+
+<h1 id="config-toml-1">config.toml</h1>
+
+<p>For this example site, I defined permalinks for two sections, <code>post</code> and <code>note</code>, so that the links to pages under these directories will contain the date info, e.g., <code>https://xmin.yihui.name/post/2016/02/14/a-plain-markdown-post/</code>. This is optional, and it is up to your personal taste of URLs.</p>
+
+<pre><code>[permalinks]
+    post = &quot;/post/:year/:month/:day/:slug/&quot;
+    note = &quot;/note/:year/:month/:day/:slug/&quot;
+</code></pre>
+
+<p>You can define the menu through <code>menu.main</code>, e.g.,</p>
+
+<pre><code>[[menu.main]]
+    name = &quot;Home&quot;
+    url = &quot;/&quot;
+    weight = 1
+[[menu.main]]
+    name = &quot;About&quot;
+    url = &quot;/about/&quot;
+    weight = 2
+[[menu.main]]
+    name = &quot;Categories&quot;
+    url = &quot;/categories/&quot;
+    weight = 3
+[[menu.main]]
+    name = &quot;Tags&quot;
+    url = &quot;/tags/&quot;
+    weight = 4
+[[menu.main]]
+    name = &quot;Subscribe&quot;
+    url = &quot;/index.xml&quot;
+</code></pre>
+
+<p>Alternatively, you can add <code>menu: main</code> to the YAML metadata of any of your pages, so that these pages will appear in the menu.</p>
+
+<p>The page footer can be defined in <code>.Params.footer</code>, and the text is treated as Markdown, e.g.,</p>
+
+<pre><code>[params]
+    footer = &quot;&amp;copy; [Yihui Xie](https://yihui.name) 2017&quot;
+</code></pre>
+
+<h1 id="custom-layouts">Custom layouts</h1>
+
+<p>There are two layout files under <code>layouts/partials/</code> that you may want to override: <code>head_custom.html</code> and <code>foot_custom.html</code>. This is how you inject arbitrary HTML code to the head and foot areas. For example, this site has a file <code>layouts/partials/foot_custom.html</code> to support LaTeX math via MathJax and center images automatically:</p>
+
+<pre><code class="language-html">&lt;script src=&quot;//yihui.name/js/math-code.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+&lt;/script&gt;
+&lt;script async src=&quot;//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;script async src=&quot;//yihui.name/js/center-img.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>You can certainly enable highlight.js for syntax highlighting by yourself through <code>head_custom.html</code> and <code>foot_custom.html</code> if you want.</p>
+
+<p>If you do not like the default fonts (e.g., <code>Palatino</code>), you may provide your own <code>static/css/fonts.css</code> under the root directory of your website to override the <code>fonts.css</code> in the theme.</p>
+
+<h1 id="other-features">Other features</h1>
+
+<p>I could have added more features to this theme, but I decided not to, since I have no intention to make this theme feature-rich. However, I will teach you how. I have prepared several examples via pull requests at <a href="https://github.com/yihui/hugo-xmin/pulls">https://github.com/yihui/hugo-xmin/pulls</a>, so that you can see the implementations of these features when you check out the diffs in the pull requests. For example, you can:</p>
+
+<ul>
+<li><p><a href="https://github.com/yihui/hugo-xmin/pull/3">Enable Google Analytics</a></p></li>
+
+<li><p><a href="https://github.com/yihui/hugo-xmin/pull/4">Enable Disqus comments</a></p></li>
+
+<li><p><a href="https://github.com/yihui/hugo-xmin/pull/5">Enable highlight.js for syntax highlighting of code blocks</a></p></li>
+
+<li><p><a href="https://github.com/yihui/hugo-xmin/pull/2">Display categories and tags on a page</a></p></li>
+
+<li><p><a href="https://github.com/yihui/hugo-xmin/pull/7">Add a table of contents</a></p></li>
+
+<li><p><a href="https://github.com/yihui/hugo-xmin/pull/6">Add a link in the footer of each page to &ldquo;Edit this page&rdquo; on Github</a></p></li>
+</ul>
+
+<p>To fully understand these examples, you have to read <a href="https://bookdown.org/yihui/blogdown/templates.html">the section on Hugo templates</a> in the <strong>blogdown</strong> book.</p>
+
+<h1 id="design-philosophy">Design philosophy</h1>
+
+<p>Lastly, a few words about my design philosophy for this theme: I have been relying on existing frameworks like Bootstrap for years since I&rsquo;m not really a designer, and I was always scared by the complexity of CSS.</p>
+
+<p>When I started writing this theme, I asked myself, &ldquo;<em>What if I just write from scratch?</em>&rdquo; No Bootstrap. No Normalize.css. I don&rsquo;t care about IE (life could be so much easier without IE) or inconsistencies among browsers (for personal websites). As long as the theme looks okay in Chrome, Firefox, and Safari, I&rsquo;m done. Thanks to the simplicity of Markdown, you cannot really produce very complicated HTML, and I think styling the HTML output from Markdown is much simpler than general HTML documents. For example, I do not need to care much about form elements like textareas or buttons.</p>
+
+<p>After I finished this theme, I started to wonder why I&rsquo;d need <code>normalize.css</code> at all (it sounds like a religious belief). The default appearance of modern browsers actually looks pretty good in my eyes, after I tweak the typeface a little bit.</p>
+
+<p>Compared to inconsistencies across browsers, I care much more about these properties of HTML elements:</p>
+
+<ul>
+<li>Tables should always be centered, and striped tables are easier to read especially when they are wide. Tables should not have vertical borders.</li>
+<li>An image should be centered if it is the only child element of a paragraph.</li>
+<li>The <code>max-width</code> of images, videos, and iframes should be <code>100%</code>.</li>
+</ul>
+
+<p>I hope you can enjoy this theme. The source code is <a href="https://github.com/yihui/hugo-xmin">on Github</a>. Happy hacking!</p>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+
+<script>
+hljs.configure({languages: ['r','bash','css','html','json','tex','latex','sql','toml','yaml']});
+hljs.initHighlightingOnLoad();
+</script>
+
+  
+  <hr/>
+  &copy; <a href="https://yihui.name">Yihui Xie</a> 2017 | <a href="https://github.com/yihui">Github</a> | <a href="https://twitter.com/xieyihui">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
