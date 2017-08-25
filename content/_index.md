@@ -1,18 +1,13 @@
 ---
 title: Home
 ---
-
 [<img src="https://simpleicons.org/icons/github.svg" style="max-width:15%;min-width:40px;float:right;" alt="Github repo" />](https://github.com/yihui/hugo-xmin)
 
-_Default website using RStudio and `blogdown::new_site(theme = "yihui/hugo-xmin")`._
-_Customized without modifying the theme folder._
-**_See [About](/about/) for customizations applied._**
-_`git clone` folder and create pages and posts in `content/` folder to use theme.
-----
+# See [about](/about) for `hbxwww` customization.
 
-# HUGO XMIN
+## HUGO XMIN
 
-## _Keep it simple, but not simpler_
+### _Keep it simple, but not simpler_
 
 **XMin** is a Hugo theme written by [Yihui Xie](https://yihui.name) in about four hours: half an hour was spent on the Hugo templates, and 3.5 hours were spent on styling. The main motivation for writing this theme was to provide a really minimal example to beginners of Hugo templates. This XMin theme contains about 130 lines of code in total, including the code in HTML templates and CSS (also counting empty lines).
 

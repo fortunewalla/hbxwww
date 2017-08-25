@@ -1,10 +1,35 @@
 ---
-title: About Hugo XMin
-author: Yihui Xie
+title: About
 ---
-My Customization (hbxminwww):
 
-* __Until July 13, 2016__
+### Grateful to the amazing work of Yihui Xie https://yihui.name/ !!!
+
+_The aim is to use R based packages and tools for website creation and maintainence_
+
+Main documentation for setup & customization:
+
+* From start to finish https://apreshill.rbind.io/post/up-and-running-with-blogdown/
+* Hugo-Xmin Theme Information https://xmin.yihui.name/about/
+* Rbind Domain Support https://support.rbind.io/about/
+
+General website with `hugo-xmin` theme
+
+* In RStudio, Create File -> New Project.
+* Create new website with command `blogdown::new_site(theme = "yihui/hugo-xmin")`
+* To update theme, delete `hugo-xmin` folder in `themes`. Then in RStudio `blogdown::install_theme('yihui/hugo-xmin')`. Then 'Build Website' again.
+
+For `hbxwww` customized website
+
+* `git clone https://github.com/fortunewalla/hbxwww.git`
+* Open `hbxwww.RProj` in RStudio
+* Theme folder `hugo-xmin` is untouched. So theme can be updated without losing customized changes.
+* To update theme, delete `hugo-xmin` folder in `themes`. Then in RStudio `blogdown::install_theme('yihui/hugo-xmin')`. Then 'Build Website' again.
+
+----
+
+Customization:
+
+* __Until July 13, 2017__
 * Added 'Posts' to menu through `config.toml` [done]
 * Removed 'Notes' . Delete `content/notes` directory. [done]
 * Removed 'Posts' from appearing in the Home Page. In `layouts/_default/list.html` Add if condition. [done]

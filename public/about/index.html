@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Hugo XMin | A minimal Hugo website</title>
+    <title>About | A minimal Hugo website</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -40,8 +40,8 @@
     </nav>
 
 <div class="article-meta">
-<h1><span class="title">About Hugo XMin</span></h1>
-<h2 class="author">Yihui Xie</h2>
+<h1><span class="title">About</span></h1>
+
 
 
 <p class="terms">
@@ -58,10 +58,41 @@
 <main>
 
 
-<p>My Customization (hbxminwww):</p>
+<h3 id="grateful-to-the-amazing-work-of-yihui-xie-https-yihui-name">Grateful to the amazing work of Yihui Xie <a href="https://yihui.name/">https://yihui.name/</a> !!!</h3>
+
+<p><em>The aim is to use R based packages and tools for website creation and maintainence</em></p>
+
+<p>Main documentation for setup &amp; customization:</p>
 
 <ul>
-<li><strong>Until July 13, 2016</strong></li>
+<li>From start to finish <a href="https://apreshill.rbind.io/post/up-and-running-with-blogdown/">https://apreshill.rbind.io/post/up-and-running-with-blogdown/</a></li>
+<li>Hugo-Xmin Theme Information <a href="https://xmin.yihui.name/about/">https://xmin.yihui.name/about/</a></li>
+<li>Rbind Domain Support <a href="https://support.rbind.io/about/">https://support.rbind.io/about/</a></li>
+</ul>
+
+<p>General website with <code>hugo-xmin</code> theme</p>
+
+<ul>
+<li>In RStudio, Create File -&gt; New Project.</li>
+<li>Create new website with command <code>blogdown::new_site(theme = &quot;yihui/hugo-xmin&quot;)</code></li>
+<li>To update theme, delete <code>hugo-xmin</code> folder in <code>themes</code>. Then in RStudio <code>blogdown::install_theme('yihui/hugo-xmin')</code>. Then &lsquo;Build Website&rsquo; again.</li>
+</ul>
+
+<p>For <code>hbxwww</code> customized website</p>
+
+<ul>
+<li><code>git clone https://github.com/fortunewalla/hbxwww.git</code></li>
+<li>Open <code>hbxwww.RProj</code> in RStudio</li>
+<li>Theme folder <code>hugo-xmin</code> is untouched. So theme can be updated without losing customized changes.</li>
+<li>To update theme, delete <code>hugo-xmin</code> folder in <code>themes</code>. Then in RStudio <code>blogdown::install_theme('yihui/hugo-xmin')</code>. Then &lsquo;Build Website&rsquo; again.</li>
+</ul>
+
+<hr />
+
+<p>Customization:</p>
+
+<ul>
+<li><strong>Until July 13, 2017</strong></li>
 <li>Added &lsquo;Posts&rsquo; to menu through <code>config.toml</code> [done]</li>
 <li>Removed &lsquo;Notes&rsquo; . Delete <code>content/notes</code> directory. [done]</li>
 <li>Removed &lsquo;Posts&rsquo; from appearing in the Home Page. In <code>layouts/_default/list.html</code> Add if condition. [done]</li>
