@@ -56,8 +56,8 @@ There are two layout files under `layouts/partials/` that you may want to overri
 
 ```html
 <script src="//yihui.name/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<!-- <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script async src="//yihui.name/js/center-img.js"></script>
 ```
